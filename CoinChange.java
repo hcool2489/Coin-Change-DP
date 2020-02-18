@@ -18,6 +18,10 @@ public class CoinChange{
 		for(int i=1;i<args.length;i++){
 			coins[i-1] = Integer.valueOf(args[i]);
 		}
-		System.out.println(minCoins(coins, coins.length, amt));
+		int min = minCoins(coins, coins.length, amt);
+		if(min == Integer.MAX_VALUE)
+			System.out.println("Unable to process " + amt + " with given coins!");
+		else
+			System.out.println(min);
 	}
 }

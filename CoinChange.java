@@ -13,7 +13,11 @@ public class CoinChange{
 		return res;
 	}
 	public static void main(String[] args){
-		System.out.println(args[0]);
-		System.out.println(args[1]);
+		int amt = Integer.valueOf(args[0]);
+		int[] coins = new int[args.length-1];
+		for(int i=1;i<args.length;i++){
+			coins[i-1] = Integer.valueOf(args[i]);
+		}
+		System.out.println(minCoins(coins, coins.length, amt));
 	}
 }
